@@ -8,6 +8,12 @@
                     <div class="panel_s">
                         <div class="panel-body">
                             <?php echo 'Welcome '.$company ?>
+                            <?php render_datatable(array(
+                                'Tên nhân viên',
+                                'Ngày sinh',
+                                'Giới tính',
+                                'Ngày tạo',
+                            ),'demo_staff'); ?>
                         </div>
                     </div>
                 </div>
@@ -16,3 +22,9 @@
     </div>
 </div>
 <?php init_tail(); ?>
+<script>
+    $(function(){
+        initDataTable('.table-demo_staff', admin_url+'demo_module/table');
+    });
+</script>
+
